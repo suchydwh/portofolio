@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - John Doe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .skill-bar {
+            transition: width 2s ease-in-out;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-gray-800">Portfolio</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-gray-900">Beranda</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-gray-900">Tentang</a>
+                    <a href="#skills" class="nav-link text-gray-600 hover:text-gray-900">Keahlian</a>
+                    <a href="#projects" class="nav-link text-gray-600 hover:text-gray-900">Proyek</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-gray-900">Kontak</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#home" class="block py-2 text-gray-600 hover:text-gray-900">Beranda</a>
+                <a href="#about" class="block py-2 text-gray-600 hover:text-gray-900">Tentang</a>
+                <a href="#skills" class="block py-2 text-gray-600 hover:text-gray-900">Keahlian</a>
+                <a href="#projects" class="block py-2 text-gray-600 hover:text-gray-900">Proyek</a>
+                <a href="#contact" class="block py-2 text-gray-600 hover:text-gray-900">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg min-h-screen flex items-center justify-center text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="fade-in">
+                <div class="w-32 h-32 mx-auto mb-8 rounded-full bg-white/20 flex items-center justify-center text-6xl">
+                    👨‍💻
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">John Doe</h1>
+                <p class="text-xl md:text-2xl mb-8 text-white/90">Full Stack Developer & UI/UX Designer</p>
+                <p class="text-lg mb-12 text-white/80 max-w-2xl mx-auto">
+                    Saya menciptakan pengalaman digital yang menakjubkan dengan menggabungkan desain yang indah dan teknologi terdepan.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+                        Lihat Proyek
+                    </a>
+                    <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition duration-300">
+                        Hubungi Saya
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Tentang Saya</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="w-80 h-80 mx-auto bg-gradient-to-br from-purple-400 to-blue-500 rounded-2xl flex items-center justify-center text-8xl text-white">
+                        🚀
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Passionate Developer</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Dengan pengalaman lebih dari 5 tahun dalam pengembangan web, saya berspesialisasi dalam menciptakan aplikasi web yang responsif dan user-friendly. Saya memiliki passion yang besar dalam teknologi terbaru dan selalu berusaha memberikan solusi terbaik untuk setiap proyek.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Keahlian saya meliputi frontend development dengan React, Vue.js, dan backend development dengan Node.js, Python, dan berbagai database. Saya juga memiliki pengalaman dalam UI/UX design dan mobile app development.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">📧 Email</h4>
+                            <p class="text-gray-600">john@example.com</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">📍 Lokasi</h4>
+                            <p class="text-gray-600">Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Keahlian</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8">Technical Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">JavaScript / TypeScript</span>
+                                <span class="text-gray-600">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-purple-600 h-3 rounded-full" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">React / Vue.js</span>
+                                <span class="text-gray-600">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-blue-600 h-3 rounded-full" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Node.js / Python</span>
+                                <span class="text-gray-600">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-green-600 h-3 rounded-full" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">UI/UX Design</span>
+                                <span class="text-gray-600">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-pink-600 h-3 rounded-full" style="width: 0%" data-width="75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8">Tools & Technologies</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                            <div class="text-3xl mb-2">⚛️</div>
+                            <p class="font-medium text-gray-700">React</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                            <div class="text-3xl mb-2">🟢</div>
+                            <p class="font-medium text-gray-700">Node.js</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                            <div class="text-3xl mb-2">🐍</div>
+                            <p class="font-medium text-gray-700">Python</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                            <div class="text-3xl mb-2">🗄️</div>
+                            <p class="font-medium text-gray-700">MongoDB</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                            <div class="text-3xl mb-2">🎨</div>
+                            <p class="font-medium text-gray-700">Figma</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                            <div class="text-3xl mb-2">🐙</div>
+                            <p class="font-medium text-gray-700">Git</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Proyek Terbaru</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden fade-in">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-6xl text-white">
+                        🛒
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">E-Commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">Platform e-commerce modern dengan fitur lengkap, payment gateway, dan admin dashboard.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">MongoDB</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition duration-300">
+                                Live Demo
+                            </button>
+                            <button class="flex-1 border border-purple-600 text-purple-600 py-2 px-4 rounded-lg hover:bg-purple-50 transition duration-300">
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden fade-in">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center text-6xl text-white">
+                        📱
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Mobile Banking App</h3>
+                        <p class="text-gray-600 mb-4">Aplikasi mobile banking dengan UI/UX modern dan fitur keamanan tinggi.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">React Native</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">Firebase</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm">Redux</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition duration-300">
+                                Live Demo
+                            </button>
+                            <button class="flex-1 border border-purple-600 text-purple-600 py-2 px-4 rounded-lg hover:bg-purple-50 transition duration-300">
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden fade-in">
+                    <div class="h-48 bg-gradient-to-br from-pink-400 to-red-500 flex items-center justify-center text-6xl text-white">
+                        📊
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Analytics Dashboard</h3>
+                        <p class="text-gray-600 mb-4">Dashboard analytics real-time dengan visualisasi data yang interaktif dan responsif.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Vue.js</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">D3.js</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm">Express</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition duration-300">
+                                Live Demo
+                            </button>
+                            <button class="flex-1 border border-purple-600 text-purple-600 py-2 px-4 rounded-lg hover:bg-purple-50 transition duration-300">
+                                GitHub
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Mari Berkolaborasi</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg">Punya proyek menarik? Mari diskusikan bagaimana saya bisa membantu mewujudkannya!</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Informasi Kontak</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-xl mr-4">
+                                📧
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Email</h4>
+                                <p class="text-gray-600">john.doe@example.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-xl mr-4">
+                                📱
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Telepon</h4>
+                                <p class="text-gray-600">+62 812-3456-7890</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-xl mr-4">
+                                📍
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Lokasi</h4>
+                                <p class="text-gray-600">Jakarta, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-gray-800 mb-4">Ikuti Saya</h4>
+                        <div class="flex space-x-4">
+                            <button class="w-10 h-10 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+                                📘
+                            </button>
+                            <button class="w-10 h-10 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition duration-300">
+                                🐦
+                            </button>
+                            <button class="w-10 h-10 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition duration-300">
+                                💼
+                            </button>
+                            <button class="w-10 h-10 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition duration-300">
+                                🐙
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <form class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-2">Nama Lengkap</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Masukkan nama Anda">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Masukkan email Anda">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-2">Subjek</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Subjek pesan">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-2">Pesan</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Tulis pesan Anda di sini..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-purple-700 transition duration-300">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">© 2024 John Doe. Semua hak cipta dilindungi.</p>
+            <p class="text-gray-400 mt-2">Dibuat dengan ❤️ menggunakan HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animate skill bars when they come into view
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 500);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            skillObserver.observe(skillsSection);
+        }
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const subject = this.querySelectorAll('input[type="text"]')[1].value;
+            const message = this.querySelector('textarea').value;
+            
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Mohon lengkapi semua field!');
+                return;
+            }
+            
+            // Show success message
+            alert('Terima kasih! Pesan Anda telah terkirim. Saya akan segera menghubungi Anda kembali.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Add active nav link highlighting
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-purple-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-purple-600');
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'980ef878525c7978',t:'MTc1ODE3ODg3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
